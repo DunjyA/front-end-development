@@ -1,0 +1,14 @@
+<HTML>
+<body>
+<head></head>
+<h1>Introduction to Front-end development</h1>
+<p>Neki novi tekst</p>
+<p>A front-end developer architects and developers client part od website and applications using web technologies
+(languages):</p>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+</body>
+</HTML>
