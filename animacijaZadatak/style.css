@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    --primary-color: #fb5dad;
+    --second-color: #55fb9f; 
+    --third-color: #b97aff;
+    --bckg-color: #050210;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.box {
+    background-color: var(--bckg-color);
+    border-color: black;
+    border-style: solid;
+    width: 550px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigCircle {
+    width: 300px;
+    height: 300px;
+    /* border-width: 25px; */
+    /* border-style: solid; */
+    border-radius: 100%;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: some-animation;
+    animation-duration: 1s;
+    /* transition-timing-function: linear; */
+    animation-timing-function: cubic-bezier(0, 0, 0, 0);
+    animation-iteration-count: infinite;
+    /* filter: drop-shadow(0 0 40px white); */
+    position: relative;
+}
+
+.bigCircle::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    border-radius: 100%;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    animation-timing-function: cubic-bezier(0, 0, 0, 0);
+    z-index: -1;
+    filter: blur(40px);
+    animation: rotate-shadow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate-shadow {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.middleCircle {
+    width: 260px;
+    height: 260px;
+    border-radius: 100%;
+    background-color: var(--bckg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.middleCircle::after {
+    position: relative;
+    content: "";
+}
+
+.circle::after {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #0a061b;
+    animation-name: my-animation;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    content: "";
+}
+
+@keyframes some-animation {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes my-animation {
+
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(5);
+        opacity: 0.7;
+    }
+}
+
+
